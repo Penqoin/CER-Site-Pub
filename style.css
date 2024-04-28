@@ -1,0 +1,188 @@
+/* add bold version from file ./fonts/comicsans_bold.ttf*/
+/* @font-face { */
+    /* font-family: "comicsans"; */
+    /* src: url("./fonts/comicsans.ttf"); */
+/* } */
+/* @font-face { */
+    /* font-family: "comicsans_bold"; */
+    /* src: url("./fonts/comicsans_bold.ttf"); */
+    /* font-weight: bold; */
+/* } */
+:root {
+    --bg: #435334;
+    --text1: #CEDEBD;
+    --highlight: #FAF1E4;
+    --text2: #9EB384;
+    --link: #300090;
+    --link-highlight: #6000c0;
+}
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+body { /* tag */ /*centered everything*/
+    background-color: var(--bg);
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* dinna va henta fra en boilerplate, og funka fint (: */
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+h1 { /* tag */
+    text-align: center;
+    color: var(--text1);
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0px;
+}
+p { /* tag */
+    color: var(--text2);
+    font-size: 1.15em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+#clock {  /* id */ /*set to bold text*/
+    color: var(--text1);
+    font-weight: bold;      
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+}
+.subtitle {
+    text-align: center;
+    color: var(--text1);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+.subsubtitle {
+    text-align: center;
+    color: var(--text1);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+.meme { /* class */
+    align-self: center;
+    border: 5px solid var(--highlight);
+    border-radius: 10px;
+    margin: auto;
+    padding: 0px;
+}
+.bilde { /* class */
+    align-self: center;
+    margin: auto;
+    padding: 0px;
+    border-radius: 10px;
+    border: 5px solid var(--highlight);
+}
+.link {
+    color : var(--link);
+    text-decoration: none;
+}
+.link:hover {
+    color : var(--link-highlight);
+    text-decoration: none;
+}
+.link:visited {
+    color : var(--link);
+    text-decoration: none;
+}
+.link:visited:hover {
+    color : var(--link-highlight);
+    text-decoration: none;
+}
+.header{
+    color: var(--text1);
+    font-size: 25px;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+.footer {
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    color: var(--text1);
+    text-align: center;
+}
+nav {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 10px;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.oppgave_link { /* list items at center of screen */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    color: var(--link);
+}
+.navbar_logo { /* id */
+    color: var(--text1);
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+.navbar_links { /* id */
+    list-style: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar_item a { /* class */
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color:  var(--text1);
+  }
+
+.navbar_item a:hover{
+    color: var(--bg);
+    text-decoration: none;
+  }
+.navbar_item:hover{
+    background-color: var(--text1);
+    text-decoration: none;
+  }
+canvas {
+    align-self: center;
+    margin: auto;
+}
+.badge-base {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}

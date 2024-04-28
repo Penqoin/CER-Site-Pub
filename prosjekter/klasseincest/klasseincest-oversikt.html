@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Incest Oversikt</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="icon" href="../../pictures/logo-short.svg" type="image/svg+xml">
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+
+    </head>
+    <body>
+        <div class="background">
+        <!--[if lt IE 7]>
+            <p class="browsehappy" lang="en">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        </div>
+        <nav class="navbar"><!-- Navigasjons linjen, bare at d e fra dei fleste sidene, må endre om man skal se på hoved siden. -->
+            <a href="../../index.html" class="navbar_logo">CER</a><!--Bytt ut med logo senere-->
+            <ul  class="navbar_links">
+                <li class="navbar_item"><a href="../../index.html">Hjem</a></li>
+                <li class="navbar_item"><a href="../../om.html">Om</a></li>
+                <li class="navbar_item"><a href="../../kontakt.html">Kontakt</a></li>
+                <li class="navbar_item"><a href="../../prosjekter.html">Prosjekter</a></li>
+            </ul>
+        </nav>
+        <div class="header">
+            <h1>Klasse Incest Oversikt</h1>
+        </div>
+
+
+        <div class="content">
+            <script src="https://unpkg.com/force-graph"></script>
+            <div id="graph"></div><!-- https://github.com/vasturiano/force-graph -->
+                <script>
+                    fetch('./klasseincest.json').then(res => res.json()).then(data => {
+                    
+                    data.nodes.forEach(node => {
+                        node.connections = 0;
+                        data.links.forEach(link => {
+                            if (link.source == node.id || link.target == node.id) {
+                                node.connections += 1;
+                            }
+                        });
+                    });
+                    
+                    const Graph = ForceGraph()
+                    (document.getElementById('graph'))
+                        .height(window.innerHeight*0.8)
+                        .graphData(data)
+                        .nodeId('id')
+                        .nodeVal('val')
+                        .nodeLabel('name')
+                        .nodeAutoColorBy('connections')
+                        .linkSource('source')
+                        .linkTarget('target')
+                        .linkWidth(3)
+                        .nodeCanvasObject((node, ctx, globalScale) => {
+                            const label = node.name;
+                            const fontSize = 12/globalScale;
+                            ctx.font = `${fontSize}px Sans-Serif`;
+                            const textWidth = ctx.measureText(label).width;
+                            const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
+
+                            ctx.fillStyle = 'rgba(67, 83, 52, 0.1)';
+                            ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
+
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillStyle = node.color;
+                            ctx.fillText(label, node.x, node.y);
+
+                            node.__bckgDimensions = bckgDimensions; // to re-use in nodePointerAreaPaint
+                        })
+                        .nodePointerAreaPaint((node, color, ctx) => {
+                          ctx.fillStyle = color;
+                          const bckgDimensions = node.__bckgDimensions;
+                          bckgDimensions && ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
+                        });
+                        Graph.onEngineStop(() => Graph.zoomToFit(200));
+                    });
+                    
+            </script>
+        </div>
+        <div>
+            <h3 class="subsubtitle">Kilder</h3>
+            <!--
+            <p> Eline S. R, (02.10.2023) Snapchat melding. Helgen 30.9-1.10</p>
+            <p> Klassechatten, (2023) Snapchat gruppe. Bilder, videoer osv.</p>
+            <p> ANONYM, (02.10.2023) Snapchat melding. Gjentagelse av klassechatten</p>
+            <p> ANONYM, (02.10.2023) Snapchat melding. Gjentagelse av Eline</p>
+            <p> Noah og Alex, (27.11.2023) De sa det til meg </p>
+            -->
+        </div>  
+        <script src="../../main.js" async defer></script>
+
+    </body>
+</html>
