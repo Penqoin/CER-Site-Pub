@@ -13,3 +13,8 @@ if (clock_pos != null) {
         tid.setSeconds(tid.getSeconds() + 1);
     }, 1000);
 }
+
+//if url is /index, go to /
+if (window.location.pathname == "/index") {
+    window.location.pathname = "/";
+}

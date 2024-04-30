@@ -1,18 +1,25 @@
-# Enable Rewrite Engine
+#Fjern mulighet for indexing
+Options -Indexes
+
 RewriteEngine On
 
-# Set the error document for 404 errors
+
+# Ved 404 feil, send til error.html
 ErrorDocument 404 /error.html
 
-# Remove .html suffix from URLs
-RewriteEngine on
-#redirect /file.html to /file
+# Fjern .html "slutt" fra URL
+# omdiriger /file.html til /file
 RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NE,L,R]
-# now we will internally map /file to/ file.html
+
+# så gjøre dette lokalt inne i serveren også
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)/?$ /$1.html  [L]
 
-# Remove "index" from URLs
-RewriteEngine On
-RewriteRule ^(.*)/index$ /$1/ [L,R=301]
+# omdiriger alle som kobler seg til */index til bare */
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\ HTTP/
+RewriteRule ^(([^/]+/)*)index$ /$1 [R=301,L]
+
+
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.html\ HTTP/
+#RewriteRule ^(([^/]+/)*)index\.html$ http://cer06.no/$1 [R=301,L]
