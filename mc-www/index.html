@@ -16,7 +16,7 @@
                         <h1>CER06 sin Minecraft server</h1>
                         <p>Her kan du finne informasjon om vår Minecraft server.</p>
                         <p>Serveren er en Java Edition server, og du kan koble til på</p>
-                        <p><code>mc.cer06.no</code></p>
+                        <p><code>mc.play.cer06.no</code></p>
 
                         <div class="card" id="rules"> <!-- Card for Rules -->
                                 <h2>Regler</h2>
@@ -48,10 +48,10 @@
                         codeBlock.addEventListener('click', () => {
                             navigator.clipboard.writeText(codeBlock.innerText)
                                 .then(() => {
-                                    alert('Copied to clipboard!');
+                                    alert('Kopiert til utklippstavle!');
                                 })
                                 .catch((err) => {
-                                    console.error('Failed to copy text: ', err);
+                                    console.error('Klarte ikke kopiere teksten: ', err);
                                 });
                         });
                     });
