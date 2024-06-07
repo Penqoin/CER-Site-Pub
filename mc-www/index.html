@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="no">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Mads og Christian</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div>
-            <p>Her legger vi inn infor etter det vi har gjort i timene.</p>
-            <p>En side av oss, Mads og Christian</p>
-            <br>
-            <p>For å komme tilbake til hovedsiden, trykk <a href="https://cer06.no/">her</a>.</p>
-        </div>
-    </body>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Minecraft server</title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="./style.css">
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+                <!--FAvicon-->
+                <link rel="icon" type="image/svg+xml" href="./img/logo.svg">
+        </head>
+        <body>
+                <div class="container">
+                        <h1>CER06 sin Minecraft server</h1>
+                        <p>Her kan du finne informasjon om vår Minecraft server.</p>
+                        <p>Serveren er en Java Edition server, og du kan koble til på</p>
+                        <p><code>mc.cer06.no</code></p>
+
+                        <div class="card" id="rules"> <!-- Card for Rules -->
+                                <h2>Regler</h2>
+                                <p>Gjør mot andre det du vil at andre skal gjøre mpt deg</p>
+                        </div>
+
+                        <div class="card" id="info"> <!-- Card for Info -->
+                                <h2>Info</h2>
+                                <p>Her vil jeg eventuelt fylle ut informasjon om serveren, som versjon osv, men jeg gidder ikke atm</p>
+                                <!-- FILL IN SERVER INFO HERE -->
+                        </div>
+
+                        <div class="card" id="contact"> <!-- Card for Contact -->
+                                <h2>Kontakt</h2>
+                                <p>Om du har spørsmål, kan du kontakte meg på epost. (Ja jeg er vel gammeldags)</p>
+                                <p><a href="mailto:minecraft@cer06.no">minecraft@cer06.no</a></p>
+                        </div>
+
+                        <div class="card" id="map"> <!-- Card for Map -->
+                                <h2>Kart</h2>
+                                <p>Her kan du finne kart over serveren, jeg vil legge til en 3D view plugin osv, tenkte det ville vært kult.</p>
+                                <!-- ADD MAP PLUGIN HERE -->
+                        </div>
+                </div>
+
+                <script>
+                    // Click-to-copy functionality
+                    document.querySelectorAll('code').forEach((codeBlock) => {
+                        codeBlock.addEventListener('click', () => {
+                            navigator.clipboard.writeText(codeBlock.innerText)
+                                .then(() => {
+                                    alert('Copied to clipboard!');
+                                })
+                                .catch((err) => {
+                                    console.error('Failed to copy text: ', err);
+                                });
+                        });
+                    });
+                </script>
+        </body>
 </html>
