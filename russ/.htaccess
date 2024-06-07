@@ -1,0 +1,25 @@
+#Fjern mulighet for indexing
+Options -Indexes
+
+RewriteEngine On
+
+
+# Ved 404 feil, send til error.html
+ErrorDocument 404 /index.html
+
+# Fjern .html "slutt" fra URL
+# omdiriger /file.html til /file
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NE,L,R]
+
+# så gjøre dette lokalt inne i serveren også
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)/?$ /$1.html  [L]
+
+# omdiriger alle som kobler seg til */index til bare */
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\ HTTP/
+RewriteRule ^(([^/]+/)*)index$ /$1 [R=301,L]
+
+
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.html\ HTTP/
+#RewriteRule ^(([^/]+/)*)index\.html$ http://cer06.no/$1 [R=301,L]
