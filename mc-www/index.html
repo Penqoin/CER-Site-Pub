@@ -3,24 +3,26 @@
         <head>
                 <meta charset="utf-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <title>Minecraft server</title>
+                <title>CER06 SMP</title>
                 <meta name="description" content="">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" type="text/css" href="./style.css">
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-                <!--FAvicon-->
                 <link rel="icon" type="image/svg+xml" href="./img/logo.svg">
+                <script src="./main.js" async defer></script>
         </head>
         <body>
                 <div class="container">
                         <h1>CER06 sin Minecraft server</h1>
                         <p>Her kan du finne informasjon om vår Minecraft server.</p>
                         <p>Serveren er en Java Edition server, og du kan koble til på</p>
-                        <p><code>mc.play.cer06.no</code></p>
-
+                        <p><code>play.cer06.no</code></p>
+                        <!--Api for server card with, playercount, Name, Motd and so on, get this with api.-->
+                        <div class="card" id="server"> <!-- Card for Server -->
+                        </div>
                         <div class="card" id="rules"> <!-- Card for Rules -->
                                 <h2>Regler</h2>
-                                <p>Gjør mot andre det du vil at andre skal gjøre mpt deg</p>
+                                <p>Gjør mot andre det du vil at andre skal gjøre mot deg</p>
                         </div>
 
                         <div class="card" id="info"> <!-- Card for Info -->
@@ -42,19 +44,5 @@
                         </div>
                 </div>
 
-                <script>
-                    // Click-to-copy functionality
-                    document.querySelectorAll('code').forEach((codeBlock) => {
-                        codeBlock.addEventListener('click', () => {
-                            navigator.clipboard.writeText(codeBlock.innerText)
-                                .then(() => {
-                                    alert('Kopiert til utklippstavle!');
-                                })
-                                .catch((err) => {
-                                    console.error('Klarte ikke kopiere teksten: ', err);
-                                });
-                        });
-                    });
-                </script>
         </body>
 </html>

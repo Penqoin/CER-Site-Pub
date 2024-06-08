@@ -103,4 +103,67 @@ nav ul li {
     background-color: var(--text1);
     text-decoration: none;
     border-radius: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Shared styles for form elements */
+form label,
+form input,
+form textarea {
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text2);
+}
+
+/* Borders for input and textarea */
+form input,
+form textarea {
+    padding: 0.5em;
+    margin: -0.7em;
+    font-family: "Kanit", sans-serif;
+    border: 2px solid var(--text1);
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form submission button */
+form input[type="submit"] {
+    border: 2px solid var(--text2);
+    background-color: var(--text2);
+    color: var(--bg);
+    font-size: 1.5em;
+    margin-top: 0.25em;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for submission button */
+form input[type="submit"]:hover {
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+    transform: translate3d(1px, -2px, 0);
+}
+
+/* Active state for submission button */
+form input[type="submit"]:active {
+    background-color: var(--text1);
+    border-color: var(--text1);
+    transform: translate3d(0px, 2px, 0);
+}
+
+#messageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    & > * {
+        color: var(--text2);
+    }
 }
