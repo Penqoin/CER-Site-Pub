@@ -23,6 +23,7 @@ const serverAddress = "play.cer06.no";
                             <h2>Minecraft Info</h2>
                             <div class="server-info">
                             <p>${data.players.online} / ${data.players.max}</p>
+                            ${data.players.list != "" ? "Mer enn 0" : "0 folk på"}
                             <p>${data.motd.html.join("<br>")}</p>
                             <p>${data.version}</p>
                             </div>
