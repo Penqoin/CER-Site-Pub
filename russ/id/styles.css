@@ -28,7 +28,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 90vh;
     min-width: 100vw;
     transition: background-color 0.5s, color 0.5s;
 }
