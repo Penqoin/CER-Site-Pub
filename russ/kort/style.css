@@ -1,0 +1,84 @@
+/* Root Variables */
+:root {
+    --bg-color: #ff1010;
+    --text-color: #ffffff;
+    --link-color: #0000ff;
+    --shadow-color: #000000;
+    --fill-color-svg: #000000;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --bg-color: #800D0D;
+    --text-color: #505050;
+    --link-color: #000080;
+    --shadow-color: #000000;
+    --fill-color-svg: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    -webkit-tap-highlight-color: transparent;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    min-width: 100vw;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+    text-shadow: calc(1rem / 16 * 8) calc(1rem / 16 * 4) 0rem var(--shadow-color);
+}
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+}
+/* Hide/show icons based on theme */
+[data-theme="dark"] #icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] #icon-moon {
+    display: none;
+}
+
+[data-theme="light"] #icon-sun {
+    display: none;
+}
+
+[data-theme="light"] #icon-moon {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    
+}

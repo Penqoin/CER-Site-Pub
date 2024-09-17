@@ -30,7 +30,8 @@ body {
     justify-content: center;
     min-height: 90vh;
     min-width: 100vw;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 2s, color 0.5s;
+    overflow: hidden;
 }
 
 
@@ -46,6 +47,7 @@ body {
     align-items: center;
     justify-content: space-around;
     gap: 20px;
+    z-index: 2;
     /* height: 120px; */
 }
 
@@ -115,6 +117,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .theme-toggle svg {
@@ -128,6 +131,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    z-index:2;
 }
 .linker a{
     text-decoration: none;
@@ -137,6 +141,39 @@ body {
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0px 0px 16px var(--shadow-color);
+}
+
+/* Theme transition */ 
+
+.theme-transition {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    
+    border-radius: 50%;
+    background-color: var(--bg-color);
+
+}
+
+.animate {
+    animation: scale 1.5s linear;
+}
+
+.hidden {
+    width: 0 !important;
+    height: 0 !important;
+    display: none;
+}
+
+@keyframes scale {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 750;
+    }
 }
 
 /* Hide/show icons based on theme */
@@ -158,6 +195,11 @@ body {
 
 /* Media Queries */
 @media (max-width: 600px) {
+    body {
+        min-height: 85vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
     .profile-container {
         padding: 15px;
         height: auto;
@@ -165,6 +207,7 @@ body {
         align-items: center;
         text-align: center;
         max-width: min(70%, 600px);
+        top: 10vh;
     }
     .theme-toggle {
         position: absolute;
@@ -176,21 +219,16 @@ body {
         right: 20px;
         margin: 0 0;
         top: calc(100% - (20px + 36px));
-
     }
-    
+    .theme-transition {
+        top: calc(100% - (20px + 36px));
+    }
     .theme-toggle svg {
         width: 32px;
         height: 24px;
         fill: var(--text-color);
     }
-    .profile-container {
-        padding: 15px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        max-width: min(70%, 600px);
-    }
+
     .profile-details {
         position: relative;
         left: 0;
@@ -212,4 +250,15 @@ body {
         align-items: center;
         flex-direction: row;
     }
+    .animate {
+        animation: scale 1.5s linear;
+    }
+    @keyframes scale {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 400;
+    }
+}
 }

@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const iconSun = document.getElementById('icon-sun');
     const iconMoon = document.getElementById('icon-moon');
-
-    let isAnimating = false;
     const favicon = document.getElementById('favicon');
 
     // Set initial theme based on local storage or default to light
@@ -15,20 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add event listener for the toggle button
     themeToggle.addEventListener('click', () => {
-        if (isAnimating) return ; // if animation is in progress do not proceed        
-
         // Get the current theme
         let theme = document.documentElement.getAttribute('data-theme');
-        const themeTransition = document.getElementById('theme-transition');
-
-        themeTransition.classList.remove('hidden');
-        themeTransition.classList.add('animate');
-        isAnimating = true;
-        
-        themeTransition.addEventListener('animationend', () => {
-            themeTransition.classList.remove('animate');
-            isAnimating = false;
-        })
 
         // Toggle between light and dark themes
         if (theme === 'light') {
