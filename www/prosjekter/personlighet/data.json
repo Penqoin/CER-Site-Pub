@@ -1,0 +1,390 @@
+{
+    "nodes": [
+        {
+            "id":1,
+            "name":"Aida",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTP"
+        },
+        {
+            "id":2,
+            "name":"Albert",
+            "group": 1,
+            "connections": 0,
+            "typep":"INTJ"
+        },
+        {
+            "id":3,
+            "name":"Alexander",
+            "group": 1,
+            "connections": 0,
+            "typep":"ESTJ"
+        },
+        {
+            "id":4,
+            "name":"Andrea",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTP"
+        },
+        {
+            "id":5,
+            "name":"Andreas R",
+            "group": 1,
+            "connections": 0,
+            "typep":"ISTP"
+        },
+        {
+            "id":6,
+            "name":"Andreas W",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTP"
+        },
+        {
+            "id":7,
+            "name":"Christian",
+            "group": 1,
+            "connections": 0,
+            "typep":"INTJ"
+        },
+        {
+            "id":8,
+            "name":"Eline",
+            "group": 1,
+            "connections": 0,
+            "typep":"ESFP"
+        },
+        {
+            "id":9,
+            "name":"Erica",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTJ"
+        },
+        {
+            "id":10,
+            "name":"Jakob",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTP"
+        },
+        {
+            "id":11,
+            "name":"Julie",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENFJ"
+        },
+        {
+            "id":12,
+            "name":"Kornelius",
+            "group": 1,
+            "connections": 0,
+            "typep":"ESFJ"
+        },
+        {
+            "id":13,
+            "name":"Maren",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTP"
+        },
+        {
+            "id":14,
+            "name":"Marius",
+            "group": 1,
+            "connections": 0,
+            "typep":"INTP"
+        },
+        {
+            "id":15,
+            "name":"Myrtel",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENFP"
+        },
+        {
+            "id":16,
+            "name":"Nancy",
+            "group": 1,
+            "connections": 0,
+            "typep":"ISFP"
+        },
+        {
+            "id":17,
+            "name":"Noah",
+            "group": 1,
+            "connections": 0,
+            "typep":"ESFP"
+        },
+        {
+            "id":18,
+            "name":"Oline",
+            "group": 1,
+            "connections": 0,
+            "typep":"INTJ"
+        },
+        {
+            "id":19,
+            "name":"Oliver",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENFJ"
+        },
+        {
+            "id":20,
+            "name":"Randi",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTP"
+        },
+        {
+            "id":21,
+            "name":"Sebastian",
+            "group": 1,
+            "connections": 0,
+            "typep":"ISTJ"
+        },
+        {
+            "id":22,
+            "name":"Sigurd",
+            "group": 1,
+            "connections": 0,
+            "typep":"ESTJ"
+        },
+        {
+            "id":23,
+            "name":"Stella",
+            "group": 1,
+            "connections": 0,
+            "typep":"INFP"
+        },
+        {
+            "id":24,
+            "name":"Thae Su",
+            "group": 1,
+            "connections": 0,
+            "typep":"INFJ"
+        },
+        {
+            "id":25,
+            "name":"Ulrik",
+            "group": 1,
+            "connections": 0,
+            "typep":"ENTP"
+        },
+        {
+            "id":26,
+            "name":"Victor",
+            "group": 1,
+            "connections": 0,
+            "typep":"ESTP"
+        },
+        {
+            "id":27,
+            "name":"Øyvår",
+            "group": 1,
+            "connections": 0,
+            "typep":"ISFJ"
+        }
+    ],
+    "colors": [
+        {
+            "typep":"perfect",
+            "from": [
+                "ESFP",
+                "ESFJ",
+                "ESTP",
+                "ESTJ",
+                "ENFP",
+                "ENFJ",
+                "ENTP",
+                "ENTJ",
+                "ISFP",
+                "ISFJ",
+                "ISTP",
+                "ISTJ",
+                "INFP",
+                "INFJ",
+                "INTP",
+                "INTJ"
+            ],
+            "to": [
+                ["ISTJ", "ISFJ"], 
+                ["ISTP", "ISFP"],
+                ["ISTJ", "ISFJ"],
+                ["ISFP", "ISTP","INTP"],
+                ["ISFP", "INFP"], 
+                ["INFP", "INTP"],
+                ["INFJ","INTJ"],
+                ["INFP", "INTP"],
+                ["ESFJ","ESTJ","ENFJ"], 
+                ["ESFP","ESTP"],
+                ["ESFJ","ESTJ"],
+                ["ESFP","ESTP"],
+                ["ENTJ","ENFJ"], 
+                ["ENTP","ENFP"],
+                ["ESTJ","ENTJ"],
+                ["ENTP","ENFP"]
+            ]
+        },
+        {
+            "typep":"good",
+            "from": [
+                "ESFP",
+                "ESFJ",
+                "ESTP",
+                "ESTJ",
+                "ENFP",
+                "ENFJ",
+                "ENTP",
+                "ENTJ",
+                "ISFP",
+                "ISFJ",
+                "ISTP",
+                "ISTJ",
+                "INFP",
+                "INFJ",
+                "INTP",
+                "INTJ"
+            ],
+            "to": [
+                [""], 
+                ["ISTJ", "ISFJ","ESTJ","ESFJ"],
+                [""],
+                ["ESFJ", "ISFJ","ISTJ"],
+                ["INFP", "INTP","ENTJ","ENTP","ENFJ","ESTJ"], 
+                ["ENFP", "ENTP","ENTJ","INFJ","INTP","INTJ","ENFP"],
+                ["ENTJ", "ENFJ","ENFP","INFP","INTP","ENFJ","ENTP"],
+                ["ENFJ","INFJ", "INTJ","ENFP","ENFJ","ENTP"],
+                [""], 
+                ["ISTJ","ESFJ","ESTJ","ISFJ"],
+                [""],
+                ["ESFJ","ESTJ","ISFJ","ISTJ"],
+                ["INFJ","INTP","ENFP","ENTP","INFP"], 
+                ["INFP","INTP","ENTJ","ENFJ","INFJ"],
+                ["INFJ","INTJ","ENTP","ENFJ","ENFP","INTP"],
+                ["INFP","INFJ","INTP","ENTJ","ENFJ","INTJ"]
+            ]
+        },
+        {
+            "typep":"neutral",
+            "from": [
+                "ESFP",
+                "ESFJ",
+                "ESTP",
+                "ESTJ",
+                "ENFP",
+                "ENFJ",
+                "ENTP",
+                "ENTJ",
+                "ISFP",
+                "ISFJ",
+                "ISTP",
+                "ISTJ",
+                "INFP",
+                "INFJ",
+                "INTP",
+                "INTJ"
+            ],
+            "to": [
+                ["INTP","INTJ","ESTJ","ENTP","ENTJ","ESFJ"], 
+                ["ENTJ", "ESFP","ESTP"],
+                ["INTJ", "INTP","ESFP","ENTJ","ESFJ","ENTP","ESTJ"],
+                ["ENTJ", "ESTP","ESFP"],
+                [""], 
+                [""],
+                ["ISFP","ISTP","ESFP","ESTP"],
+                ["ISFP", "ISFJ","ISTP","ISTJ","ESFP","ESFJ","ESTP","ESTJ"],
+                ["ENTJ","ENTP","INTJ","INTP","ISTJ","ISFJ"], 
+                ["ENTJ","ISFP","ISTP"],
+                ["ISTJ","INTP","INTJ","ENTJ","ENTP","ISFJ"],
+                ["ISTP","ISFP","ENTJ"],
+                [""], 
+                [""],
+                ["ISTP","ESFP","ESTP","ISFP"],
+                ["ISTP","ISFP","ESTJ","ESFJ","ESFP"]
+            ]
+        },
+        {
+            "typep":"bad",
+            "from": [
+                "ESFP",
+                "ESFJ",
+                "ESTP",
+                "ESTJ",
+                "ENFP",
+                "ENFJ",
+                "ENTP",
+                "ENTJ",
+                "ISFP",
+                "ISFJ",
+                "ISTP",
+                "ISTJ",
+                "INFP",
+                "INFJ",
+                "INTP",
+                "INTJ"
+            ],
+            "to": [
+                ["ISTP", "ISFP","ESTP","ESFP"], 
+                ["ENTP", "INTJ","INTP"],
+                ["ISTP", "ISFP","ESFP","ESTP"],
+                ["INTJ", "INTP"], 
+                [""],
+                [""],
+                ["ISFJ","ISTJ","ESFJ","ESTJ"],
+                [""], 
+                ["ISTP","ESFP","ESTP","ISFP"],
+                ["INTP","INTJ","ENTP"],
+                ["ESFP","ESTP","ISFP","ISTP"],
+                ["ENTP","INTP","INTJ"], 
+                [""],
+                [""],
+                ["ISFJ","ISTJ","ESFJ"],
+                ["ISTJ","ISFJ","ESTJ","ESFJ"]
+            ]
+        },
+        {
+            "typep":"worst",
+            "from": [
+                "ESFP",
+                "ESFJ",
+                "ESTP",
+                "ESTJ",
+                "ENFP",
+                "ENFJ",
+                "ENTP",
+                "ENTJ",
+                "ISFP",
+                "ISFJ",
+                "ISTP",
+                "ISTJ",
+                "INFP",
+                "INFJ",
+                "INTP",
+                "INTJ"
+            ],
+            "to": [
+                ["INFJ","INFP","ENFJ","ENFP"], 
+                ["INFP", "INFJ","ENFP","ENFJ"],
+                ["ENFJ", "ENFP","INFJ","INFP"],
+                ["ENFP", "ENFJ","INFJ","INFP"],
+                ["ISFP","ISFJ","ISTP","ISTJ","ESFP","ESFJ","ESTP","ESTJ"], 
+                ["ISFJ","ISTP","ISTJ","ESFP","ESFJ","ESTP","ESTJ"],
+                [""],
+                [""],
+                ["INFP","INFJ","ENFP"],
+                ["INFP","INFJ","ENFP","ENFJ"], 
+                ["INFP","INFJ","ENFP","ENFJ"],
+                ["INFP","INFJ","ENFP","ENFJ"],
+                ["ESFP","ESFJ","ESTP","ESTJ","ISFP","ISFJ","ISTP","ISTJ"],
+                ["ESFP","ESFJ","ESTP","ESTJ","ISFP","ISFJ","ISTP","ISTJ"], 
+                [""],
+                [""]
+            ]
+        }
+    ]
+}

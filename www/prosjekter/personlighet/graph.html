@@ -1,0 +1,142 @@
+<!DOCtype html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Oversikt</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="icon" href="../../pictures/logo-short.svg" typep="image/svg+xml">
+        <link rel="stylesheet" typep="text/css" href="../../style.css">
+
+    </head>
+    <body>
+        <div class="background">
+        <!--[if lt IE 7]>
+            <p class="browsehappy" lang="en">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        </div>
+        <nav class="navbar"><!-- Navigasjons linjen, bare at d e fra dei fleste sidene, må endre om man skal se på hoved siden. -->
+            <a href="../../" class="navbar_logo"><p>CER</p></a><!--Bytt ut med logo senere-->
+            <ul  class="navbar_links">
+                <li class="navbar_item"><a href="../../">Hjem</a></li>
+                <li class="navbar_item"><a href="../../om">Om</a></li>
+                <li class="navbar_item"><a href="../../kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="header">
+            <h1>Klasse Personlighets Samsvar</h1>
+        </div>
+
+
+        <div class="content">
+            <script src="https://unpkg.com/force-graph"></script>
+            <div id="graph"></div><!-- https://github.com/vasturiano/force-graph -->
+                <script>
+  fetch('./data.json')
+  .then(res => res.json())
+  .then(data => {
+    const typepColorMap = {
+      "perfect": 'blue',
+      "good": 'green',
+      "neutral": 'yellow',
+      "bad": 'orange',
+      "worst": 'red',
+    };
+    const colorData = data.colors[0];
+    const fromtypeps = colorData.from;
+    const totypeps = colorData.to;
+
+
+    // Function to find the color typep between two nodes
+    function getConnectionColor(sourcetypep, targettypep) {
+    for (const colorRule of data.colors) {
+        const fromtypeps = colorRule.from;
+        const totypeps = colorRule.to[fromtypeps.indexOf(sourcetypep)];
+        if (fromtypeps.includes(sourcetypep)) {
+            for (const totypep of totypeps) {
+                if (totypep.includes(targettypep)) {
+                    return typepColorMap[colorRule.typep] || 'gray'; // Return the correct color
+                }
+            }
+        }
+    }
+    console.log('No color found for', sourcetypep, targettypep);
+    return 'gray'; // Default color if no match
+}
+
+
+    // Create a links array if it doesn't exist
+    if (!data.links) {
+      data.links = [];
+    }
+
+    // Generate one connection for each node to every other node
+    data.nodes.forEach((node, index) => {
+
+        // Create a link to every other node
+        data.nodes.forEach((targetNode, targetIndex) => {
+            if (index !== targetIndex) {
+            data.links.push({
+                source: node.id,
+                target: targetNode.id,
+            });
+            }
+        });
+    });
+
+    const Graph = ForceGraph()
+      (document.getElementById('graph'))
+      .height(window.innerHeight * 0.8)
+      .graphData(data)
+      .nodeId('id')
+      .nodeVal('val')
+      .nodeLabel('name')
+      .nodeAutoColorBy('typep')
+      .linkSource('source')
+      .linkTarget('target')
+      .linkWidth(1)
+      .linkDirectionalParticles(0)
+      .linkColor(link => {
+  const sourceNode = data.nodes.find(node => node.id === link.source);
+  const targetNode = data.nodes.find(node => node.id === link.target);
+
+  // Logging the node typeps to see if they are valid
+  if (link.source && link.target) {
+    return getConnectionColor(link.source.typep, link.target.typep);
+    // Test case: INTJ to ENTP (or any valid combination from your data)
+  }
+  return 'black'; // Default color if one of the nodes is missing
+})
+      .nodeCanvasObject((node, ctx, globalScale) => {
+        const label = node.name;
+        const fontSize = 15 / globalScale;
+        ctx.font = `${fontSize}px Sans-Serif`;
+        const textWidth = ctx.measureText(label).width;
+        const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
+
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = node.color;
+        ctx.fillText(label, node.x, node.y);
+
+        node.__bckgDimensions = bckgDimensions; // to re-use in nodePointerAreaPaint
+      })
+      .nodePointerAreaPaint((node, color, ctx) => {
+        ctx.fillStyle = color;
+        const bckgDimensions = node.__bckgDimensions;
+        bckgDimensions && ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
+      });
+
+    Graph.onEngineStop(() => Graph.zoomToFit(200));
+  });
+
+            </script>
+        </div>
+        <script src="../../main.js" async defer></script>
+
+    </body>
+</html>

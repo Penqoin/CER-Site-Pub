@@ -4,7 +4,7 @@ Options -Indexes
 RewriteEngine On
 
 
-# Ved 404 feil, send til error.html
+# Ved 404 feil, send til root og så index.html
 ErrorDocument 404 /index.html
 
 # Fjern .html "slutt" fra URL
