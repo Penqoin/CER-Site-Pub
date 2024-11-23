@@ -7,7 +7,6 @@
     --fill-color-svg: #000000;
 }
 
-
 body {
     margin: 0;
     padding: 0;
@@ -17,11 +16,53 @@ body {
     -webkit-tap-highlight-color: transparent;
     height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
+    min-height: 100vh;
     min-width: 100vw;
     transition: background-color 0.5s, color 0.5s;
+}
+
+header, footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.full-width .content {
+    width: 100%;
+    text-align: center;
+}
+
+.text, .image {
+    flex: 1;
+    padding: 1rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
@@ -30,6 +71,12 @@ h1 {
     padding: 0;
     text-shadow: calc(1rem / 16 * 8) calc(1rem / 16 * 4) 0rem var(--shadow-color);
 }
+
+h2 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
 a {
     color: var(--link-color);
     text-decoration: none;
@@ -37,5 +84,7 @@ a {
 }
 
 @media (max-width: 600px) {
-    
+    .row {
+        flex-direction: column;
+    }
 }
