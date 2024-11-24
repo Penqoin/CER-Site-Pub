@@ -1,0 +1,13 @@
+:root {
+    --bg-color: #ff1010;
+    --text-color: #ffffff;
+    --link-color: #0000ff;
+    --shadow-color: #000000;
+    --fill-color-svg: #000000;
+
+    /*
+     * BUTTONS
+     */
+
+    --help-button-bg: #fff;
+}

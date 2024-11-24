@@ -1,0 +1,56 @@
+@import url('./colors.css');
+
+
+.task-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color) !important;
+}
+
+/*
+ * HINT DISPLAY
+ */
+
+.hint-display {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%);
+
+    max-width: 400px;
+    max-height: 300px;
+
+    min-width: 200px;
+    min-height: 100px;
+
+    background-color: black;
+}
+
+/*
+ * HELP BUTTON
+ */
+
+.task-help-button {
+    position: absolute;
+    bottom: 40px; 
+    right: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: var(--help-button-bg);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 500ms;
+}
+
+.task-help-button:hover {
+    scale: 1.2
+}
